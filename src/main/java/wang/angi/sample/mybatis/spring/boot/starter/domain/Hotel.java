@@ -1,17 +1,19 @@
 /**
- *    Copyright 2015-2016 the original author or authors.
+ * Copyright 2015-2016 the original author or authors.
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
+ * @author Eduardo Macarron
  */
 /**
  * @author Eduardo Macarron
@@ -22,51 +24,61 @@ import java.io.Serializable;
 
 public class Hotel implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Long city;
+    private Long id;
 
-	private String name;
+    private Long city;
 
-	private String address;
+    private String name;
 
-	private String zip;
+    private String address;
 
-	public Long getCity() {
-		return city;
-	}
+    private String zip;
 
-	public void setCity(Long city) {
-		this.city = city;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Long getCity() {
+        return city;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setCity(Long city) {
+        this.city = city;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getZip() {
-		return zip;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	@Override
-	public String toString() {
-		return getCity() + "," + getName() + "," + getAddress() + "," + getZip();
-	}
-	
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    @Override
+    public String toString() {
+        return getCity() + "," + getName() + "," + getAddress() + "," + getZip();
+    }
+
 }

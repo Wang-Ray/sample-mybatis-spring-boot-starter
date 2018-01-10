@@ -23,4 +23,6 @@
     <select id="selectCityById" resultType="City">
         select * from city where id = #{id}
     </select>
+    <!-- 二级缓存 -->
+    <!--<cache/>-->
 </mapper>

@@ -33,7 +33,10 @@ public class CityDao {
 	}
 
 	public City selectCityById(long id) {
-		return this.sqlSession.selectOne("selectCityById", id);
+		City city = this.sqlSession.selectOne("selectCityById", id);
+		// 二级缓存开启时，下面的sql不会触发执行
+		City city1 = this.sqlSession.selectOne("selectCityById", id);
+		return city;
 	}
 
 }
