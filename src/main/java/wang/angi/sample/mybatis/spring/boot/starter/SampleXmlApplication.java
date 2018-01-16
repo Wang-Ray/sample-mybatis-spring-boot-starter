@@ -19,6 +19,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import wang.angi.sample.mybatis.spring.boot.starter.dao.CityDao;
+import wang.angi.sample.mybatis.spring.boot.starter.domain.City;
 import wang.angi.sample.mybatis.spring.boot.starter.mapper.CountryMapper;
 import wang.angi.sample.mybatis.spring.boot.starter.mapper.HotelMapper;
 
@@ -43,6 +44,13 @@ public class SampleXmlApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        City city = new City();
+        city.setName("WuHan");
+        city.setState("HuBei");
+        city.setCountry("China");
+        city.setCreatedBy("水晶");
+        System.out.println(cityDao.insertCity(city));
+        System.out.println(city);
         System.out.println(this.countryMapper.selectCountryById(1));
         System.out.println(this.cityDao.selectCityById(1));
         System.out.println(this.hotelMapper.selectHotelById(1));

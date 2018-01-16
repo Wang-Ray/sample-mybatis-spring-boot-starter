@@ -26,9 +26,9 @@ public class Hotel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private Integer id;
 
-    private Long city;
+    private Integer city;
 
     private String name;
 
@@ -36,19 +36,19 @@ public class Hotel implements Serializable {
 
     private String zip;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getCity() {
+    public Integer getCity() {
         return city;
     }
 
-    public void setCity(Long city) {
+    public void setCity(Integer city) {
         this.city = city;
     }
 
