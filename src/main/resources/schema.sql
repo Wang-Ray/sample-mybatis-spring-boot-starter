@@ -9,3 +9,8 @@ create table hotel (id int primary key auto_increment, name varchar, address var
 insert into country (name) values ('US');
 insert into city (name, state, country, created_by) values ('San Francisco', 'CA', 'US', 'Angi');
 insert into hotel(name, address, zip, city) values ('Conrad Treasury Place', 'William & George Streets', '4001',1);
+insert into hotel(name, address, zip, city) values ('Conrad Treasury Place', 'William & George Streets', '4001',1);
+insert into hotel(name, address, zip, city) values ('Conrad Treasury Place', 'William & George Streets', '4001',1);
+insert into hotel(name, address, zip, city) values ('Conrad Treasury Place', 'William & George Streets', '4001',1);
+insert into hotel(name, address, zip, city) values ('Conrad Treasury Place', 'William & George Streets', '4001',1);
+insert into hotel(name, address, zip, city) values ('Conrad Treasury Place', 'William & George Streets', '4001',1);

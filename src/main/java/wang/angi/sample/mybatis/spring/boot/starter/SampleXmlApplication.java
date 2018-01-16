@@ -15,11 +15,13 @@
  */
 package wang.angi.sample.mybatis.spring.boot.starter;
 
+import com.github.pagehelper.PageHelper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import wang.angi.sample.mybatis.spring.boot.starter.dao.CityDao;
 import wang.angi.sample.mybatis.spring.boot.starter.domain.City;
+import wang.angi.sample.mybatis.spring.boot.starter.domain.Hotel;
 import wang.angi.sample.mybatis.spring.boot.starter.mapper.CountryMapper;
 import wang.angi.sample.mybatis.spring.boot.starter.mapper.HotelMapper;
 
@@ -51,9 +53,14 @@ public class SampleXmlApplication implements CommandLineRunner {
         city.setCreatedBy("水晶");
         System.out.println(cityDao.insertCity(city));
         System.out.println(city);
+
+        System.out.println(cityDao.selectCityByExample().size());
+
         System.out.println(this.countryMapper.selectCountryById(1));
         System.out.println(this.cityDao.selectCityById(1));
         System.out.println(this.hotelMapper.selectHotelById(1));
+        PageHelper.startPage(2,3);
+        System.out.println(this.hotelMapper.selectHotelByExample(new Hotel()));
     }
 
 }

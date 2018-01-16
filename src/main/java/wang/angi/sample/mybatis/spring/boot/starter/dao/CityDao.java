@@ -15,12 +15,16 @@
  */
 package wang.angi.sample.mybatis.spring.boot.starter.dao;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 import wang.angi.sample.mybatis.spring.boot.starter.domain.City;
 
+import java.util.List;
+
 /**
  * 使用SQLSession操作
+ *
  * @author Eddú Meléndez
  */
 @Component
@@ -43,4 +47,7 @@ public class CityDao {
         return this.sqlSession.insert("insertCity", city);
     }
 
+    public List<City> selectCityByExample() {
+        return this.sqlSession.selectList("selectCityByExample", new City(), new RowBounds(2, 3));
+    }
 }

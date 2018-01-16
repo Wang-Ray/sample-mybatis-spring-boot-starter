@@ -6,7 +6,7 @@
     <select id="selectCityById" resultType="City">
         select * from city where id = #{id}
     </select>
-    <insert id="insertCity" parameterType="wang.angi.sample.mybatis.spring.boot.starter.domain.City">
+    <insert id="insertCity" parameterType="City">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -15,6 +15,11 @@
         values (#{name,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR},
         #{createdBy,jdbcType=VARCHAR})
     </insert>
+    <select id="selectCityByExample" parameterType="City" resultType="City">
+        select
+        id, name, state, country, created_by
+        from city
+    </select>
     <!-- 二级缓存 -->
     <!--<cache/>-->
 </mapper>
