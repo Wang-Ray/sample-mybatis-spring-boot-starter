@@ -30,7 +30,7 @@ import java.util.List;
 @Component
 public class CityDao {
 
-    private final SqlSession sqlSession;
+    private SqlSession sqlSession;
 
     public CityDao(SqlSession sqlSession) {
         this.sqlSession = sqlSession;
