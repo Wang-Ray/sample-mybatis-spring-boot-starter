@@ -17,6 +17,7 @@ package wang.angi.sample.mybatis.spring.boot.starter.dao;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Component;
 import wang.angi.sample.mybatis.spring.boot.starter.domain.City;
 
@@ -37,9 +38,12 @@ public class CityDao {
     }
 
     public City selectCityById(long id) {
-        City city = this.sqlSession.selectOne("selectCityById", id);
-        // 二级缓存开启时，下面的sql不会触发执行
-        City city1 = this.sqlSession.selectOne("selectCityById", id);
+        SqlSessionTemplate sqlSessionTemplate = (SqlSessionTemplate) sqlSession;
+        SqlSession s = sqlSessionTemplate.getSqlSessionFactory().openSession();
+        City city = s.selectOne("selectCityById", id);
+        // 因为一级缓存，下面的sql不会执行
+        City city1 = s.selectOne("selectCityById", id);
+        s.close();
         return city;
     }
 

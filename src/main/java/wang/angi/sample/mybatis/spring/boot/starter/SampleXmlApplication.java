@@ -51,19 +51,21 @@ public class SampleXmlApplication implements CommandLineRunner {
         city.setState("HuBei");
         city.setCountry("China");
         city.setCreatedBy("水晶");
-        System.out.println(cityDao.insertCity(city));
-        System.out.println(city);
+//        System.out.println(cityDao.insertCity(city));
 
-        System.out.println(cityDao.selectCityByExample().size());
+//        System.out.println(cityDao.selectCityByExample().size());
 
-        System.out.println(this.countryMapper.selectCountryById(1));
+//        System.out.println(this.countryMapper.selectCountryById(1));
 
-        System.out.println(this.cityDao.selectCityById(1));
         System.out.println(this.cityDao.selectCityById(1));
 
         System.out.println(this.hotelMapper.selectHotelById(1));
-        PageHelper.startPage(2, 3);
-        System.out.println(this.hotelMapper.selectHotelByExample(new Hotel()));
+        // 打开二级缓存，下面的sql不会执行
+        System.out.println(this.hotelMapper.selectHotelById(1));
+        System.out.println(this.hotelMapper.selectHotelById(1));
+        System.out.println(this.hotelMapper.selectHotelById(1));
+//        PageHelper.startPage(2, 3);
+//        System.out.println(this.hotelMapper.selectHotelByExample(new Hotel()));
     }
 
 }

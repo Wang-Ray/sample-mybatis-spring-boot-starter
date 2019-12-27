@@ -20,6 +20,4 @@
         id, name, state, country, created_by
         from city
     </select>
-    <!-- 二级缓存 -->
-    <!--<cache/>-->
 </mapper>
