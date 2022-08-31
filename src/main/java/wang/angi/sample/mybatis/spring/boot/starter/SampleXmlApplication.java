@@ -1,21 +1,9 @@
-/**
- * Copyright 2015-2017 the original author or authors.
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package wang.angi.sample.mybatis.spring.boot.starter;
 
 import com.github.pagehelper.PageHelper;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,7 +15,9 @@ import wang.angi.sample.mybatis.spring.boot.starter.mapper.HotelMapper;
 
 @SpringBootApplication
 public class SampleXmlApplication implements CommandLineRunner {
-
+	
+	private Logger logger = LoggerFactory.getLogger(getClass()); 
+	
     public static void main(String[] args) {
         SpringApplication.run(SampleXmlApplication.class, args);
     }
@@ -57,13 +47,13 @@ public class SampleXmlApplication implements CommandLineRunner {
 
 //        System.out.println(this.countryMapper.selectCountryById(1));
 
-        System.out.println(this.cityDao.selectCityById(1));
+        logger.info(this.cityDao.selectCityById(1).toString());
 
-        System.out.println(this.hotelMapper.selectHotelById(1));
+        logger.info(this.hotelMapper.selectHotelById(1).toString());
         // 打开二级缓存，下面的sql不会执行
-        System.out.println(this.hotelMapper.selectHotelById(1));
-        System.out.println(this.hotelMapper.selectHotelById(1));
-        System.out.println(this.hotelMapper.selectHotelById(1));
+        logger.info(this.hotelMapper.selectHotelById(1).toString());
+        logger.info(this.hotelMapper.selectHotelById(1).toString());
+        logger.info(this.hotelMapper.selectHotelById(1).toString());
 //        PageHelper.startPage(2, 3);
 //        System.out.println(this.hotelMapper.selectHotelByExample(new Hotel()));
     }

@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wang.angi.sample.mybatis.spring.boot.starter.mapper.HotelMapper">
+	<!-- 打开二级缓存 -->
     <cache/>
     <select id="selectHotelById" resultType="Hotel">
         select * from hotel where id = #{id}
