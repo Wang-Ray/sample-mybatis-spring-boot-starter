@@ -14,12 +14,12 @@ import wang.angi.sample.mybatis.spring.boot.starter.mapper.CountryMapper;
 import wang.angi.sample.mybatis.spring.boot.starter.mapper.HotelMapper;
 
 @SpringBootApplication
-public class SampleXmlApplication implements CommandLineRunner {
+public class MybatisSpringBootApplication implements CommandLineRunner {
 	
 	private Logger logger = LoggerFactory.getLogger(getClass()); 
 	
     public static void main(String[] args) {
-        SpringApplication.run(SampleXmlApplication.class, args);
+        SpringApplication.run(MybatisSpringBootApplication.class, args);
     }
 
     private final HotelMapper hotelMapper;
@@ -28,7 +28,7 @@ public class SampleXmlApplication implements CommandLineRunner {
 
     private final CountryMapper countryMapper;
 
-    public SampleXmlApplication(HotelMapper hotelMapper, CityDao cityDao, CountryMapper countryMapper) {
+    public MybatisSpringBootApplication(HotelMapper hotelMapper, CityDao cityDao, CountryMapper countryMapper) {
         this.hotelMapper = hotelMapper;
         this.cityDao = cityDao;
         this.countryMapper = countryMapper;
