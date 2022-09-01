@@ -1,12 +1,11 @@
 package wang.angi.sample.mybatis.spring.boot.starter;
 
-import com.github.pagehelper.PageHelper;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import wang.angi.sample.mybatis.spring.boot.starter.dao.CityDao;
 import wang.angi.sample.mybatis.spring.boot.starter.domain.City;
 import wang.angi.sample.mybatis.spring.boot.starter.domain.Hotel;
@@ -54,7 +53,6 @@ public class MybatisSpringBootApplication implements CommandLineRunner {
         logger.info(this.hotelMapper.selectHotelById(1).toString());
         logger.info(this.hotelMapper.selectHotelById(1).toString());
         logger.info(this.hotelMapper.selectHotelById(1).toString());
-        PageHelper.startPage(2, 3);
         logger.info(this.hotelMapper.selectHotelByExample(new Hotel()).toString());
     }
 

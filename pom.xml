@@ -15,19 +15,12 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
-		<pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
-		<mapper-spring-boot-starter.version>1.1.5</mapper-spring-boot-starter.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>${mybatis-spring-boot-starter.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>${pagehelper-spring-boot-starter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
