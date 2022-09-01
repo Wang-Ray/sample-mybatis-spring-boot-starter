@@ -54,7 +54,7 @@ public class SampleXmlApplication implements CommandLineRunner {
         logger.info(this.hotelMapper.selectHotelById(1).toString());
         logger.info(this.hotelMapper.selectHotelById(1).toString());
         logger.info(this.hotelMapper.selectHotelById(1).toString());
-        PageHelper.startPage(1, 3);
+        PageHelper.startPage(2, 3);
         logger.info(this.hotelMapper.selectHotelByExample(new Hotel()).toString());
     }
 
