@@ -13,6 +13,8 @@ import wang.angi.sample.mybatis.spring.boot.starter.mapper.CountryMapper;
 import wang.angi.sample.mybatis.spring.boot.starter.mapper.HotelMapper;
 
 @SpringBootApplication
+// 可以自定义Mybatis Mapper扫描
+// @MapperScan(basePackages = "wang.angi.sample.mybatis.spring.boot.starter.mapper")
 public class MybatisSpringBootApplication implements CommandLineRunner {
 	
 	private Logger logger = LoggerFactory.getLogger(getClass()); 
